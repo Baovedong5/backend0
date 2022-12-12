@@ -1,14 +1,13 @@
-const http = require("http"); // sử dụng đc do cài đặt node.js
+const express = require("express");
+// import express from "express";
 
-const hostname = "localhost"; // = vs localhost
-const port = 6969;
+const app = express();
+const port = 8080;
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader("Content-Type", "text/plain");
-  res.end("Hello World\n with Phuong");
+app.get("/", (req, res) => {
+  res.send("Hello World!");
 });
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
 });

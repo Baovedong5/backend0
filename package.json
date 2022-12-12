@@ -1,0 +1,27 @@
+{
+  "name": "backend0",
+  "version": "1.0.0",
+  "description": "backend-zero",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Baovedong5/backend0.git"
+  },
+  "keywords": [
+    "nodejs",
+    "react"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Baovedong5/backend0/issues"
+  },
+  "homepage": "https://github.com/Baovedong5/backend0#readme",
+  "dependencies": {
+    "express": "4.18.2"
+  }
+}

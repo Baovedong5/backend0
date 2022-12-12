@@ -13,7 +13,7 @@ app.set("view engine", "ejs");
 
 // Khai báo route
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Hello World! & nodemon");
 });
 
 app.get("/abc", (req, res) => {

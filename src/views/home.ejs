@@ -28,41 +28,30 @@ table { border-collapse: collapse; width: 100%; }th, td { padding: 8px; text-ali
         <a href="/create">Create Users</a>
     </div>
     <div class="table-container">
-        <%= JSON.stringify(listUsers) %>
+        
         <div class="title">List Users</div>
         <table>
             <tr>
-            <th>ID</th>
-            <th>Email</th>
-            <th>Name</th>
-            <th>City</th>
-            <th>Actions</th>
+                <th>ID</th>
+                <th>Email</th>
+                <th>Name</th>
+                <th>City</th>
+                <th>Actions</th>
             </tr>
-            <tr>
-            <td>Peter</td>
-            <td>Griffin</td>
-            <td>$100</td>
-            <td>$100</td>
-            <td>
-                <button>Edit</button>
-                <button>Delete</button>
-            </td>
-            </tr>
-            <tr>
-            <td>Lois</td>
-            <td>Griffin</td>
-            <td>$150</td>
-            </tr>
-            <tr>
-            <td>Joe</td>
-            <td>Swanson</td>
-            <td>$300</td>
-            </tr>
-            <tr>
-            <td>Cleveland</td>
-            <td>Brown</td>
-            <td>$250</td>
-            </tr>
+
+            <% for (let i = 0; i < listUsers.length; i++) { %>
+                <tr>
+                    <td><%= listUsers[i].id %></td>
+                    <td><%= listUsers[i].email %></td>
+                    <td><%= listUsers[i].name %></td>
+                    <td><%= listUsers[i].city %></td>
+                    <td>
+                        <button>Edit</button>
+                        <button>Delete</button>
+                    </td>
+                </tr>
+            <% } %>
+
         </table>
     </div>
 </body>

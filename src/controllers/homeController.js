@@ -9,7 +9,7 @@ const {
 const User = require("../models/user");
 
 const getHomepage = async (req, res) => {
-  let results = [];
+  let results = await User.find({});
   return res.render("home.ejs", { listUsers: results });
 };
 
@@ -27,13 +27,6 @@ const postCreateUser = async (req, res) => {
   let city = req.body.city;
 
   console.log(">>> email = ", email, " name = ", name, " city = ", city);
-
-  // let [results, fields] = await connection.query(
-  //   `INSERT INTO Users (email,name,city)
-  //     VALUES (?,?,?)`,
-  //   [email, name, city]
-  // );
-
   await User.create({
     email: email,
     name: name,

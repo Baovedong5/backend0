@@ -19,9 +19,14 @@ configViewEngine(app);
 // Khai báo route
 app.use("/", webRouter);
 
-//test connection
-connection();
-
-app.listen(port, hostname, () => {
-  console.log(`Example app listening on port ${port}`);
-});
+(async () => {
+  //test connection
+  try {
+    await connection();
+    app.listen(port, hostname, () => {
+      console.log(`Backend zero app listening on port ${port}`);
+    });
+  } catch (error) {
+    console.log(">>> Error connect to DB: ", error);
+  }
+})();

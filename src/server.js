@@ -2,7 +2,7 @@ const express = require("express"); // common js
 require("dotenv").config();
 const configViewEngine = require("./config/viewEngine");
 const webRouter = require("./routes/web");
-const mongoose = require("mongoose");
+const Kitten = require("./models/Kitten");
 const connection = require("./config/dataBase");
 
 const app = express(); // khai báo app của express
@@ -19,13 +19,7 @@ configViewEngine(app);
 // Khai báo route
 app.use("/", webRouter);
 
-const kittySchema = new mongoose.Schema({
-  name: String,
-});
-
-const Kitten = mongoose.model("Kitten", kittySchema);
-const cat = new Kitten({ name: "Phuong dep trai" });
-
+const cat = new Kitten({ name: "Phuong dep trai model" });
 cat.save();
 
 (async () => {
